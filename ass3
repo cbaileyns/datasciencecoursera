@@ -1,0 +1,22 @@
+best <- function(state, outcome) {
+  state <- outcome2[outcome2[,7] == state,]
+  if (nrow(stt) == 0) {
+    print("invalid state")
+  } else {
+    if (outcome == "heart failure") {
+      ostate <- order(state[,17]) == 1
+      state[ostate,2]
+    }
+    else if (outcome == "heart attack") {
+      ostate <- order(state[,11]) == 1
+      state[ostate,2]
+    }
+    else if (outcome == "pneumonia") {
+      ostate <- order(state[,23]) == 1
+      state[ostate,2]
+    }
+    else {
+      print("invalid outcome")
+    }
+  }
+}
